@@ -39,6 +39,7 @@ app.get('/name', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     teammembers = []
     pool
         .query('SELECT * FROM teammembers_jungin;')

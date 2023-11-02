@@ -5,11 +5,12 @@ import React, { useState, useEffect } from "react";
 function App() {
 
   const [name, setName] = useState();
+  const [users, setUsers] = useState();
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('http://localhost:5000/name', {mode:'cors'});
+        const response = await fetch('https://pern-server-demo2.onrender.com/name', {mode:'cors'});
         const data = await response.json();
         console.log({ data })
         setName(data.name);
